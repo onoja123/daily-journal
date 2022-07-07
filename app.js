@@ -18,14 +18,14 @@ app.use(express.static("public"));
 
 let posts = [];
 
-app.get("/", function(req, res){
+app.get("/", (req, res)=>{
   res.render("home", {
     startingContent: homeStartingContent,
     posts: posts
     });
 });
 
-app.get("/about", function(req, res){
+app.get("/about", (req, res)=>{
   res.render("about", {aboutContent: aboutContent});
 });
 
@@ -65,6 +65,6 @@ app.get("/posts/:postName", function(req, res){
 
 });
 
-app.listen(3000, function() {
+app.listen(3000, ()=> {
   console.log("Server started on port 3000");
 });
